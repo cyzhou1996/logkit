@@ -737,7 +737,6 @@ DONE:
 				log.Warnf("ERROR: diskqueue(%s) failed to sync - %s", d.name, err.Error())
 			}
 		}
-
 		if origin == FromNone {
 			// 限制为10，否则kill之后接收不到 exitChan 卡住
 			if (d.readFileNum < d.writeFileNum) && (d.readPos < d.writePos) && failRead <= 10 {
